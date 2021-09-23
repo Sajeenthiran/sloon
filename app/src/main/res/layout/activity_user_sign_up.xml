@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="0dp"
+    android:background="@color/primary_orange"
+    tools:context=".LogIn">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@+id/relativeA"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="0sp"
+                android:contentDescription="@string/description"
+                android:foregroundGravity="center_vertical"
+                android:scaleY="1.2"
+                android:src="@drawable/path1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="18dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="186dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@string/description"
+                    android:src="@drawable/logo" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/card"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:fontFamily="@font/robotoblack"
+                            android:text="@string/user"
+                            android:textColor="@color/white"
+                            android:textSize="30dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginHorizontal="10sp"
+                            android:fontFamily="@font/robotoblack"
+                            android:gravity="bottom"
+                            android:text="@string/register"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/opensansbold"
+                        android:text="@string/username"
+                        android:textColor="@color/primary_black"
+                        android:textSize="15dp" />
+
+                    <EditText
+                        android:id="@+id/SignUpSalonName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/primary_orange"
+                        android:maxLines="1"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/opensansbold"
+                        android:text="@string/userName"
+                        android:textColor="@color/primary_black"
+                        android:textSize="15dp" />
+
+                    <EditText
+                        android:id="@+id/SignUpSalonEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/primary_orange"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/opensansbold"
+                        android:text="@string/address"
+                        android:textColor="@color/primary_black"
+                        android:textSize="15dp" />
+
+                    <EditText
+                        android:id="@+id/SignUpSalonAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/primary_orange"
+                        android:maxLines="1"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/opensansbold"
+                        android:text="@string/contactnumber"
+                        android:textColor="@color/primary_black"
+                        android:textSize="15dp" />
+
+                    <EditText
+                        android:id="@+id/SignUpSalonContact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/primary_orange"
+                        android:inputType="phone"
+                        android:maxLines="1"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/opensansbold"
+                        android:text="@string/password"
+                        android:textColor="@color/primary_black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/SignUpSalonPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/primary_orange"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:textColor="@color/white" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:onClick="onCheckboxclick"
+                            android:id="@+id/UserTerms"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensanssemibold"
+                            android:text="@string/acceptTerms"
+                            android:textColor="@color/primary_black"
+                            app:buttonTint="@color/primary_black" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/userSignUp"
+                        android:layout_width="285sp"
+                        android:layout_height="56sp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/custombutton"
+                        android:clickable="true"
+                        android:fontFamily="@font/robotoblack"
+                        android:shadowColor="#A1000000"
+                        android:text="@string/signup"
+                        android:textColor="@color/primary_black"
+                        android:textSize="23sp" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

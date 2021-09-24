@@ -1,5 +1,6 @@
 package com.example.hairdo;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +29,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 
 public class UserProfileEdit extends Fragment {
@@ -147,13 +150,21 @@ public class UserProfileEdit extends Fragment {
                 FirebaseDatabase.getInstance().getReference("Customer").child(id).updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-//                        Toast.makeText(UserProfileEdit.this, "Record is updated", Toast.LENGTH_SHORT).show();
+                        Log.e("ccccccccc","aVoid");
+                        requireActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                // update UI
+                                Toast.makeText(getActivity(), "Record is updated", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
                         //success code
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        //failure code
+                        Log.e("ccccccccc","e "+e.toString());
                     }
                 });
 

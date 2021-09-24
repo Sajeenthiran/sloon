@@ -11,8 +11,6 @@
     <string name="description">Image</string>
     <string name="saloonregister">Register As Salon</string>
     <string name="customerregister">Register As Customer</string>
-    <string name="offers">OFFERS</string>
-    <string name="offericon">10% OFF</string>
     <string name="salonname">Salon Name</string>
     <string name="address">Address</string>
     <string name="contactnumber">Contact Number</string>
@@ -55,9 +53,7 @@
     <string name="totalCancalation">Total Cancellation</string>
     <string name="totalPendings">Total Pending</string>
     <string name="totalEarnings">Total Earnings</string>
-    <string name="tv_Calendar">CALENDAR</string>
     <string name="btn_holidays">Add Holiday</string>
-    <string name="tv_holidays">HOLIDAYS</string>
     <string name="update">Update</string>
     <string name="deleteAccont">Delete Account</string>
     <string name="cardNumber">Card Number</string>
@@ -70,13 +66,9 @@
     <string name="addressOfDev">Main Street, Colombo 9</string>
     <string name="contactUs">Contact Us</string>
     <string name="remove">Remove</string>
-    <string name="title_activity_user_profile">UserProfile</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
     <string name="save_changes">Save Changes</string>
     <string name="gender">Gender</string>
     <string name="email">Email</string>
@@ -91,13 +83,12 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_profile">Profile</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_offers">Offers</string>
     <string name="menu_upcomingA">Upcoming Appointment</string>
     <string name="menu_Appointment_summary">Summary</string>
     <string name="menu_Notification">Notification</string>
     <string name="menu_Payments">Payments</string>
     <string name="menu_logout">Log Out</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

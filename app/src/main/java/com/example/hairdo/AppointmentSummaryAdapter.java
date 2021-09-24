@@ -8,19 +8,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.hairdo.model.Appointment;
+
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AppointmentSummaryAdapter extends RecyclerView.Adapter<AppointmentSummaryAdapter.ViewHolder> {
-    ArrayList<String> salonName;
-    ArrayList<String> Date;
-    ArrayList<String> time;
+    private List<Appointment> saloonList;
 
-    public AppointmentSummaryAdapter(ArrayList<String> salonName, ArrayList<String> date, ArrayList<String> time) {
-        this.salonName = salonName;
-        Date = date;
-        this.time = time;
+    public AppointmentSummaryAdapter(List<Appointment> saloonList) {
+        this.saloonList = saloonList;
     }
 
     @Override
@@ -38,15 +37,16 @@ public class AppointmentSummaryAdapter extends RecyclerView.Adapter<AppointmentS
 
     @Override
     public void onBindViewHolder(@NonNull @NotNull AppointmentSummaryAdapter.ViewHolder holder, int position) {
-        holder.Date.setText(Date.get(position));
-        holder.time.setText(time.get(position));
-        holder.salonName.setText(salonName.get(position));
+        Appointment appointment = saloonList.get(position);
+        holder.Date.setText(appointment.date);
+        holder.time.setText(appointment.time);
+        holder.salonName.setText(appointment.saloonName);
     }
 
     @Override
     public int getItemCount() {
 
-        return salonName.size();
+        return saloonList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

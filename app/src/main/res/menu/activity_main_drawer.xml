@@ -11,6 +11,11 @@
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_baseline_supervised_user_circle_24"
             android:title="@string/menu_profile" />
+
+        <item
+            android:id="@+id/nav_offers"
+            android:icon="@drawable/ic_baseline_payments_24"
+            android:title="@string/menu_offers" />
     </group>
     <item android:title= "@string/Appointment" >
         <menu>

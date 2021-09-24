@@ -115,6 +115,9 @@ public class UserProfile  extends AppCompatActivity
 
             Intent intent = new Intent(this,ContactUs.class);
             startActivity(intent);
+        }else if(id == R.id.nav_offers){
+            Intent intent = new Intent(this,offer.class);
+            startActivity(intent);
         }
 
 //        search.setOnClickListener(new View.OnClickListener() {

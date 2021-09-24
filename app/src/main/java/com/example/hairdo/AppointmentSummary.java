@@ -1,42 +1,89 @@
 
 package com.example.hairdo;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
+
+import com.example.hairdo.model.Appointment;
+import com.example.hairdo.model.Salon;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class AppointmentSummary extends AppCompatActivity {
-    ArrayList<String> salonName = new ArrayList<>();
-    ArrayList<String> date = new ArrayList<>();
-    ArrayList<String> time = new ArrayList<>();
+    private List<Appointment> saloonList = new ArrayList<Appointment>();
+    AppointmentSummaryAdapter Adapter2;
+    private DatabaseReference mDatabase;
+    private DatabaseReference childReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_appointment_summary);
 
-        salonName.add("salonName");
-        salonName.add("salonName");
-        salonName.add("salonName");
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        childReference = mDatabase.child("Appointment");
 
-        date.add("12.08.2021");
-        date.add("12.08.2021");
-        date.add("12.08.2021");
-
-        time.add("2.30AM");
-        time.add("2.30AM");
-        time.add("2.30AM");
 
         RecyclerView recyclerView = findViewById(R.id.appointment_summary_recycleview2);
-        AppointmentSummaryAdapter Adapter2 = new AppointmentSummaryAdapter(salonName, date, time);
+        Adapter2 = new AppointmentSummaryAdapter(saloonList);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(Adapter2);
 
+        getAllSaloonVisit();
+    }
 
+    public void getAllSaloonVisit() {
+        ValueEventListener postListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Log.d("DATA",snapshot.getValue().toString());
+//                Map<String, Object> childUpdates = new HashMap<>();
+
+                Log.d("saloon",snapshot.getValue().toString());
+
+                HashMap<String, Object> dataMap = (HashMap<String, Object>) snapshot.getValue();
+
+                for (String key : dataMap.keySet()){
+
+                    Object data = dataMap.get(key);
+
+                    try{
+                        HashMap<String, Object> userData = (HashMap<String, Object>) data;
+
+                        Appointment appointment = new Appointment(userData.get("sname").toString(), userData.get("date").toString(), userData.get("time").toString());
+
+                        saloonList.add(appointment);
+
+                    }catch (ClassCastException cce){
+
+                    }
+
+                }
+
+                Adapter2.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+
+
+        };
+        childReference.addValueEventListener(postListener);
     }
 }
